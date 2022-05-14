@@ -1,0 +1,6 @@
+Clear[x, n, r, Ni, t, Maximum, Pr, c1, a, Bound, Snorm];
+n[k_Integer] := n[k] = Floor[(x[k] + 1)/3]; 
+r[k_Integer] := r[k] = Mod[x[k], 3] (5 - 3 Mod[x[k], 3])/2; x[0] = 44;
+ x[k_Integer] := x[k] = 2 (1 + r[k - 1]^2) n[k - 1] + r[k - 1]
+Maximum4[t_] := Ni*1/3 + t Sqrt[2 Ni 2/3 1/3 Log[Log[Ni]]](*iterated log for diffent values of lambda*)
+a = Table[Log[(x[i] - ((2*1000)/3))/Sqrt[1000 2/3 1/3]], {i, 0, 1000}];(*Normalized sequence*)
